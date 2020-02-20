@@ -36,14 +36,13 @@ def search_images_bing(key, term, min_sz=128):
 
 # -
 
-def plot_function(f, tx=None, ty=None, title=None, min=-2, max=2):
+def plot_function(f, tx=None, ty=None, title=None, min=-2, max=2, figsize=(6,4)):
     x = torch.linspace(min,max)
-    fig,ax = plt.subplots()
+    fig,ax = plt.subplots(figsize=figsize)
     ax.plot(x,f(x))
     if tx is not None: ax.set_xlabel(tx)
     if ty is not None: ax.set_ylabel(ty)
     if title is not None: ax.set_title(title)
-
 
 # +
 from sklearn.tree import export_graphviz
